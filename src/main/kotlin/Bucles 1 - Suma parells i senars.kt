@@ -9,14 +9,14 @@ Es mostrarà un missatge indicant la suma dels nombres parells i la suma dels se
 import java.util.*
 fun main() {
     val scanner = Scanner(System.`in`)
-    val casos = scanner.nextInt()
+    val k = scanner.nextInt()
     var sumaParells = 0
     var sumaSenars = 0
 
-    for (i in 1..casos) { //per cada cas de prova
-        val num = scanner.nextInt() //llegim el número
+    for (i in 1..k) {
+        val num = scanner.nextInt()
         if (num % 2 == 0) sumaParells += num //si el número és parell, sumem el número a la suma de parells
         else sumaSenars += num //si el número és senar, sumem el número a la suma de senars
     }
-    println("SUMA PARELLS: $sumaParells SUMA SENARS: $sumaSenars") //imprimim la suma de parells i la suma de senars
+    println("PARELLS: $sumaParells SENARS: $sumaSenars") //imprimeix la suma de parells i la suma de senars
 }

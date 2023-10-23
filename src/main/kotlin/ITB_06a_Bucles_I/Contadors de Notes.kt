@@ -1,4 +1,4 @@
-package ITB_06b_Bucles_I/*Ens demanaen fer estadístiques de notes a l'ESO. Fer un programa que donada una seqüència de notes numèriques entre 0 i 10 ens mostri:
+package ITB_06a_Bucles_I/*Ens demanaen fer estadístiques de notes a l'ESO. Fer un programa que donada una seqüència de notes numèriques entre 0 i 10 ens mostri:
 
 nombre de notes vàlides introduïdes
 la mitjana aritmètica de totes les notes introduïdes

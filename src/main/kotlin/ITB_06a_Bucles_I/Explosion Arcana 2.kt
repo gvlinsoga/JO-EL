@@ -1,4 +1,4 @@
-package ITB_06b_Bucles_I/*
+package ITB_06a_Bucles_I/*
 Un icónic atac de mag en el WoW es Explosión Arcana.
 Aquest atac comença fent poc mal, pero cada cop que el fas servir fa un 100% més de mal. Per exemple, si el primer cop fa 100 punts de mal, el següent farà 200, el següent 300, el següent 400, i així fins que passa un temps.
 

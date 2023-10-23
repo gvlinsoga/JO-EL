@@ -1,4 +1,4 @@
-package ITB_06b_Bucles_I/*Anem a fer operacions matemàtiques.
+package ITB_06a_Bucles_I/*Anem a fer operacions matemàtiques.
 Donat un nombre enter n > 0, calcula els números que són divisors d'aquest.
 
 Entrada:

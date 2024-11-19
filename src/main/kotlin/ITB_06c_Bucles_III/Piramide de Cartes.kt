@@ -17,14 +17,15 @@ import java.util.*
 
 fun main() {
     val scanner = Scanner(System.`in`)
-    val danyInicial = scanner.nextInt()
-        val explosions = scanner.nextInt()
-        var dany = danyInicial //inicialitzem el dany a l'inicial
-        var danyTotal = 0 //inicialitzem el dany total a 0
+    val casProva = scanner.nextInt()
 
-        for (quantitat in 1..explosions) { //per cada explosió
-            danyTotal += dany //sumem el dany al dany total
-            dany += danyInicial //sumem el dany inicial al dany
+    repeat(casProva){ //per cada cas de prova es repeteix el bucle
+
+        while (casProva < 1000) {
+            var cartasTotales = scanner.nextInt()
+            var nivel = 0
+
+
         }
-        println(danyTotal)
     }
+}

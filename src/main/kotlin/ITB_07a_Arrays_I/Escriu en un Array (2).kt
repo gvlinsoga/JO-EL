@@ -49,10 +49,11 @@ fun main() {
         array.add(scan.nextLine())
     }
     //Llegim la posició que volem mostrar
-    val position = scan.nextInt()
+    val position = 0
+
     //Mostrem l'array
     for (j in 0 ..  k) {
-        print("${array[j]} ")
+        println("${array[j]} ")
     }
     println()
     //Mostrem l'element de l'array a la posició indicada

@@ -16,19 +16,16 @@ import java.util.*
 
 fun main() {
     val scanner = Scanner(System.`in`)
-    val casProva = scanner.nextInt()
-
-    for (i in 1..casProva) { //per cada cas de prova es repeteix el bucle
         val ini = scanner.nextInt()
         var hp = scanner.nextInt()
         var dany = ini //inicialitzem el dany a l'inicial
         var explosions = 0 //inicialitzem el nombre d'explosions a 0
+
         while (hp > 0) { //mentre la vida de l'enemic sigui superior a 0
-            hp -= dany //restem el dany a la vida de l'enemic
-            dany += ini //sumem el dany inicial al dany
+            hp = hp - dany //restem el dany a la vida de l'enemic
+            dany = dany + ini //sumem el dany inicial al dany
             explosions++ //sumem 1 al nombre d'explosions
         }
         println(explosions)
-    }
 
 }

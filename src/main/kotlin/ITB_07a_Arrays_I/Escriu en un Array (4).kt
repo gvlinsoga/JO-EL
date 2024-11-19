@@ -29,16 +29,16 @@ import java.util.*
 
 fun main() {
     val scan = Scanner(System.`in`)
-    val k = scan.nextInt() //tamany array
-    val array = arrayOfNulls<Int>(k) //creem l'array
+    val tamany = scan.nextInt() //tamany array
+    val array = arrayOfNulls<Int>(tamany) //creem l'array
 
     //Fem un bucle per llegir l'array de Strings
-    for (i in 0 until k) {    //llegim l'array
+    for (i in 0 .. tamany -1 ) {    //llegim l'array
         array[i] = scan.nextInt() //llegim cada element de l'array
     }
-    val n = scan.nextInt() //llegim el num a sumar
-    for (j in 0 until k) { //escrivim l'array
-        array[j] = array[j]?.plus(n)
+    val numSuma = scan.nextInt() //llegim el num a sumar
+    for (j in 0 .. tamany -1) { //escrivim l'array
+        array[j] = array[j]?.plus(numSuma)
     print("${array[j]}") //escrivim cada element de l'array mes el num a sumar
     }
 }

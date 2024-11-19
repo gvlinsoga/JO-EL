@@ -33,15 +33,34 @@ import java.util.*
 fun main() {
     val scanner = Scanner(System.`in`)
     var frase = scanner.nextLine()
-    while (frase != "FIN") { //mentre la frase no sigui FIN
-        var obert = 0
-        var tancat = 0
+
+    while (frase != "FIN") { // Mentre la frase no sigui FIN
+        var obert = 0 // Comptador de signes d'obertura
+        var tancat = 0 // Comptador de signes de tancament
+
         for (i in 0 until frase.length) {
             when (frase[i]) {
-                '!' -> if (i == 0 || frase[i - 1] != '!') obert++ else tancat++
+                '¡' -> obert++ // Comptar signe d'obertura
+                '!' -> tancat++ // Comptar signe de tancament
             }
         }
+
+        // Imprimeix "SI" si hi ha la mateixa quantitat de signes d'obertura i tancament, si no "NO"
         println(if (obert == tancat) "SI" else "NO")
-        frase = scanner.nextLine()
+        frase = scanner.nextLine() // Llegir la següent línia
     }
 }
+
+
+
+//AYUDA
+//
+//Te falla un caso con el Input:
+//
+//!¡!¡!¡!¡
+//
+//
+//
+//Tu respuesta es:
+//
+//NO

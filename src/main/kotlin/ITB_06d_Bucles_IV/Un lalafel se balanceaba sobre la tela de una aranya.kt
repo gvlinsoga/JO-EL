@@ -44,7 +44,6 @@ Hay 2 telaranyas llenas.
 
 
  */
-
 import java.util.*
 
 fun main() {
@@ -52,29 +51,32 @@ fun main() {
     val casProva = scanner.nextInt()
     scanner.nextLine()
 
-    for (i in 1..casProva) { //per cada cas de prova es repeteix el bucle
-        val frase = scanner.nextLine()
-        val num = scanner.nextInt()
-        scanner.nextLine()
-        var telaranyes = 0
-        var lalafels = 0
-        var aranyes = 0
-        var telaranyesPlenes = 0
-        for (j in 0 until frase.length) {
-            when (frase[j]) {
-                'L' -> lalafels++
-                'T' -> telaranyes++
-                'A' -> aranyes++
+    for (i in 1..casProva) {
+        val frase = scanner.nextLine().lowercase() // Llegim la frase i la convertim a minúscules
+        val paraules = frase.split(" ") // Dividim la frase en paraules
+        val num = scanner.nextInt() // Llegim el número que es fa servir per comptar 'L'
+        scanner.nextLine() // Consumim el salt de línia restant
+
+        var telaranyes = 0 // Inicialitzem el comptador de telaranyes a 0
+        var lalafels = 0 // Inicialitzem el comptador de 'L' a 0
+        var aranyes = 0 // Inicialitzem el comptador de 'A' a 0
+        var telaranyesPlenes = 0 // Inicialitzem el comptador de telaranyes plenes a 0
+
+        for (j in 1 until frase.length) { // Iterem a través de cada caràcter de la frase
+            when (frase[j]) { // Comprovem el caràcter actual
+                'L' -> lalafels++ // Si és 'L', incrementem el comptador de lalafels
+                'T' -> telaranyes++ // Si és 'T', incrementem el comptador de telaranyes
+                'A' -> aranyes++ // Si és 'A', incrementem el comptador d'aranyes
             }
-            if (lalafels == num) {
-                telaranyesPlenes++
-                lalafels = 0
+            if (lalafels == num) { // Si el comptador de lalafels arriba al número especificat
+                telaranyesPlenes++ // Incrementem el comptador de telaranyes plenes
+                lalafels = 0 // Reiniciem el comptador de lalafels
             }
-            if (aranyes > 0) {
-                telaranyes = 0
-                lalafels = 0
+            if (aranyes > 0) { // Si hi ha alguna aranya
+                telaranyes = 0 // Reiniciem el comptador de telaranyes
+                lalafels = 0 // Reiniciem el comptador de lalafels
             }
         }
-        println("Hay $telaranyesPlenes telaranyas llenas.")
+        println("Hay $telaranyesPlenes telaranyas llenas.") // Imprimim el nombre de telaranyes plenes
     }
 }

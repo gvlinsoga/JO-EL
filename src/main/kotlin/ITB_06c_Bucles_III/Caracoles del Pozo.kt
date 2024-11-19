@@ -32,7 +32,6 @@ import java.util.*
 fun main() {
     val scanner = Scanner(System.`in`)
     val casProva = scanner.nextInt()
-
     repeat(casProva){ //per cada cas de prova es repeteix el bucle
         val profunditat = scanner.nextInt()
         val puja = scanner.nextInt()
@@ -41,9 +40,9 @@ fun main() {
         var metres = 0 //inicialitzem els metres a 0
         while (metres < profunditat) { //mentre els metres siguin menors que la profunditat
             dia++ //augmentem el dia
-            metres += puja //augmentem els metres amb els metres que puja
+            metres = metres + puja //augmentem els metres amb els metres que puja
             if (metres < profunditat) { //si els metres són menors que la profunditat
-                metres -= baixa //restem els metres amb els metres que baixa
+                metres =  metres - baixa //restem els metres amb els metres que baixa
             }
         }
         if (metres == profunditat) { //si els metres són iguals que la profunditat

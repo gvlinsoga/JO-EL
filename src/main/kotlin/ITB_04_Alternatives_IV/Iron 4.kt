@@ -1,4 +1,6 @@
-package ITB_04_Alternatives_IV/*En tots els jocs a on hi ha un teclat hi ha un menú per fer varies coses, en que pots seleccionar varies opcions,
+package ITB_04_Alternatives_IV
+
+/*En tots els jocs a on hi ha un teclat hi ha un menú per fer varies coses, en que pots seleccionar varies opcions,
 i cada tecla farà una cosa diferent.
 
 Demana amb Scanner una tecla i fes un switch a on cada opció representi una acció, segons aquesta taula. Torna l’opció escollida per pantalla.
@@ -8,10 +10,7 @@ Cada cas es una sola línea amb l'acció demanada
 
 Sortida:
 L'acció executada segons la taula
-
-
-
- */
+*/
 
 import java.util.*
 fun main() {

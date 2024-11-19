@@ -38,11 +38,15 @@ val scanner = Scanner(System.`in`)
     val casProva = scanner.nextInt()
 
     for (i in 1..casProva) { //per cada cas de prova es repeteix el bucle
-        val gen = scanner.nextInt()
-        var frase = "Caga tio!"
-        for (j in 1 until gen) {
-            frase = "Caga $frase"
+        var gen = scanner.nextInt()
+        gen = (gen-1)/2 //calculem la generacio que fa cagar el tio
+        var cagaTio: String = "" //inicialitzem el string cagaTio a buit
+
+        if (gen > 0 ){
+            for (gens in 1..gen) { //per cada generacio que fa cagar el tio
+                cagaTio += "caga " //afegim caga al string cagaTio
+            }
         }
-        println(frase)
+        println("Caga${cagaTio.trim()}tio!") //imprimim el resultat
     }
 }

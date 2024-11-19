@@ -28,13 +28,13 @@ fun main() {
 
 
         while (vida > 0) { //mentre la vida sigui superior a 0
-            vida -= rammus //restem l'atac del rammus a la vida
+            vida = vida - rammus //restem l'atac del rammus a la vida
             rondes++ //sumem 1 al nombre de rondes
             if (vida <= 0) { //si la vida és superior a 0
                 println("RAMMUS $rondes") //imprimim RAMMUS i el nombre de rondes
 
             } else { //si no
-                vida -= twitch //restem l'atac del twitch a la vida
+                vida = vida - twitch //restem l'atac del twitch a la vida
                 if (vida <= 0) {
                     println("TWITCH $rondes") //imprimim TWITCH i el nombre de rondes
                 }

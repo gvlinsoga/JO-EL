@@ -23,7 +23,7 @@ fun main() {
         val num = scanner.nextInt()
         var bombons = 0 // inicialitzem el nombre de bombons a 0
         for (j in 1..num) {
-            bombons += j * (j + 1) / 2 // fem la suma dels nombres del 1 fins al nombre de pisos
+            bombons = bombons + j * (j + 1) / 2 // fem la suma dels nombres del 1 fins al nombre de pisos
         }
         println(bombons)
     }

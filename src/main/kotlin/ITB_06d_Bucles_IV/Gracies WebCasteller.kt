@@ -40,21 +40,30 @@ import java.util.*
 fun main() {
     val scanner = Scanner(System.`in`)
     val casProva = scanner.nextInt()
-    scanner.nextLine()
+    scanner.nextLine() // Lee el salto de línea después del número de casos
 
-    for (i in 1..casProva) { //per cada cas de prova es repeteix el bucle
-        val frase1 = scanner.nextLine()
-        val frase2 = scanner.nextLine()
+    for (i in 1..casProva) {
+        val frase1 = scanner.nextLine().trim()
+        val frase2 = scanner.nextLine().trim()
         var iguals = 0
-        for (j in 0 until frase1.length) {
+
+        // Iterar hasta la longitud de la cadena más corta para contar coincidencias
+        val minLength = minOf(frase1.length, frase2.length)
+        for (j in 0 until minLength) {
             if (frase1[j] == frase2[j]) {
                 iguals++
             }
         }
-        if (iguals >= frase1.length / 2) {
+
+        // Longitud de la cadena más larga
+        val maxLength = maxOf(frase1.length, frase2.length)
+
+        // Verificar si las coincidencias son al menos la mitad de la longitud de la cadena más larga
+        if (iguals >= maxLength / 2) {
             println("GRACIES WEBCASTELLER")
         } else {
             println("WEBCASTELLER ESTA TRAVIESO HOY")
         }
     }
 }
+

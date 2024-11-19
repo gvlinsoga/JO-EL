@@ -14,7 +14,7 @@ fun main() {
 
     for (i in 1..casProva) { //per cada cas de prova es repeteix el bucle
         val num = scanner.nextInt()
-        var factorial = 1 //inicialitzem el factorial a 1
+        var factorial: Long = 1 //inicialitzem el factorial a 1
         for (j in 1..num) {
             factorial *= j //fem el factorial amb l'operacio *=
         }

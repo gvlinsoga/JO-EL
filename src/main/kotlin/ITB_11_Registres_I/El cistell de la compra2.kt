@@ -1,46 +1,44 @@
 import java.util.*
 
-data class Producto(val nombre: String, val precio: Float)
+data class Producte(val nom: String, val preu: Float)
 
 fun main() {
     val scan = Scanner(System.`in`)
-    scan.useLocale(Locale.US)
+    val numCas = scan.nextInt() // Nombre de productes
+    val productes = mutableListOf<Producte>()
 
-    val casos = scan.nextInt()
-    val productos = mutableListOf<Producto>()
-
-    // Lee los datos de cada producto y agrégalo a la lista
-    repeat(casos) {
-        val nombre = scan.next()
-        val precio = scan.nextFloat()
-        val producto = Producto(nombre, precio)
-        productos.add(producto)
+    // Llegir les dades de cada producte i afegir-los a la llista
+    repeat(numCas) {
+        val nom = scan.next() // Nom del producte
+        val preu = scan.nextFloat() // Preu del producte
+        val producte = Producte(nom, preu)
+        productes.add(producte)
     }
 
-    // Lee el nombre del producto que queremos comprobar
-    val productoBuscado = scan.next()
+    // Llegir el nom del producte que volem comprovar
+    val buscat = scan.next()
 
-    // Busca el producto en la lista
-    val productoEncontrado = productos.find { it.nombre == productoBuscado }
+    // Buscar el producte a la llista
+    val trobat = productes.find { it.nom == buscat }
 
-    // Verifica si el producto fue encontrado
-    if (productoEncontrado != null) {
-        // Filtra los productos con nombres alfabéticamente menores que el producto encontrado
-        val productosAnteriores = productos
-            .filter { it.nombre < productoEncontrado.nombre }
-            .sortedBy { it.nombre }
+    // Comprovar si el producte s'ha trobat
+    if (trobat != null) {
+        // Filtrar els productes amb noms alfabèticament menors que el trobat
+        val anteriors = productes
+            .filter { it.nom < trobat.nom }
+            .sortedBy { it.nom } // Ordenar per nom
 
-        // Imprime el mensaje si el producto fue encontrado
-        print("SI, M'HA COSTAT ${productoEncontrado.precio}")
+        // Imprimir el missatge si s'ha trobat el producte
+        print("SI, M'HA COSTAT ${trobat.preu}")
 
-        // Imprime información solo sobre el último producto anterior
-        val ultimoProductoAnterior = productosAnteriores.lastOrNull()
-        if (ultimoProductoAnterior != null) {
-            print(" I TAMBE TINC ${ultimoProductoAnterior.nombre} A ${ultimoProductoAnterior.precio}")
+        // Imprimir informació del darrer producte anterior, si existeix
+        val ultimProducte = anteriors.lastOrNull()
+        if (ultimProducte != null) {
+            print(" I TAMBE TINC ${ultimProducte.nom} A ${ultimProducte.preu}")
         }
 
     } else {
-        // Imprime el mensaje si el producto no fue encontrado
+        // Imprimir el missatge si no s'ha trobat el producte
         println("NO N'HI HAVIA")
     }
 }

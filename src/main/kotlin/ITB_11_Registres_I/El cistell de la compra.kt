@@ -19,7 +19,9 @@ fun main() {
     // Llegir el producte que es vol consultar
     val producteBuscat = scanner.next()
 
+}
 
+/*
     // Mostrar la sortida
     if (producteBuscat == productes[0].nom) {
         println("SI, M'HA COSTAT ${ productes.nom.preu } I TAMBE TINC Pa A ${ buscat.preu }")
@@ -31,7 +33,6 @@ fun main() {
 }
 
 
-
-
+ */
 
 

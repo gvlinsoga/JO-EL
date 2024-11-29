@@ -41,7 +41,7 @@ fun main() {
     var found = false
     for (i in 0 until n) {
         if (matrix[0][i] == 1) {
-            found = findPath(matrix, 0, i)
+            found = findPath(matrix, 0, i, Array(n) { BooleanArray(n) })
             if (found) break
         }
     }
@@ -50,3 +50,26 @@ fun main() {
     } else {
         println("No existeix un camí")
     }
+}
+
+fun findPath(matrix: Array<IntArray>, row: Int, col: Int, visited: Array<BooleanArray>): Boolean {
+    val n = matrix.size
+    if (row == n - 1) return true
+    visited[row][col] = true
+
+    val directions = arrayOf(
+        intArrayOf(0, 1),  // right
+        intArrayOf(1, 0),  // down
+        intArrayOf(0, -1), // left
+        intArrayOf(-1, 0)  // up
+    )
+
+    for (dir in directions) {
+        val newRow = row + dir[0]
+        val newCol = col + dir[1]
+        if (newRow in 0 until n && newCol in 0 until n && matrix[newRow][newCol] == 1 && !visited[newRow][newCol]) {
+            if (findPath(matrix, newRow, newCol, visited)) return true
+        }
+    }
+    return false
+}

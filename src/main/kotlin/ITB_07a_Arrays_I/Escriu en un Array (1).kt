@@ -20,16 +20,15 @@ import java.util.*
 
 fun main() {
     val scan = Scanner(System.`in`)
-    val k = scan.nextInt() //tamany array
-    val array = IntArray(k) //creem l'array
-    for (i in 0 until k) {    //llegim l'array
+    val tamany = scan.nextInt() //tamany array
+    val array = IntArray(tamany) //creem l'array
+    for (i in 0 until tamany) {    //llegim l'array
         array[i] = scan.nextInt() //llegim cada element de l'array
     }
     val position = scan.nextInt() //llegim la posició
-    for (j in 0 until k) { //escrivim l'array
+    for (j in 0 until tamany) { //escrivim l'array
         print("${array[j]} ") //escrivim cada element de l'array
     }
-    println()//escrivim un salt de línia
     println(array[position]) //escrivim l'element de l'array a la posició indicada
 
 }

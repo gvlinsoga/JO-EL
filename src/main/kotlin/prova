@@ -1,0 +1,47 @@
+import java.util.Scanner
+
+fun main() {
+    val scanner = Scanner(System.`in`)
+    val D = scanner.nextInt() //llegim el dia
+    val E = scanner.nextInt() //llegim l'hora d'entrada
+    val S = scanner.nextInt() //llegim l'hora de sortida
+    scanner.nextLine() //consmumim un salt
+
+    val horari = Array(D) { Array(S - E) { "" } } // crear la matriu
+
+    for (i in 0 until D) { // iterem sobre els dies
+        val materia = scanner.nextLine().split(" ") // llegim les materies del dia
+        for (j in 0 until (S - E)) { // iterem sobre les hores
+            horari[i][j] = materia[j] // assignem la materia a la matriu
+        }
+    }
+    val casProva = scanner.nextInt() //llegim cada cas de prova
+    repeat(casProva) { //iterem cada cas de prova
+        val dia = scanner.nextInt() //llegim el dia que volem veure
+        val hora = scanner.nextInt() //llegim l'hora que volem veure
+        val franjaHoraria = hora - E //calcular l'index de l'hora
+        //si el dia está entre 1 i el dia y entre l'hora imprimim la clase que té
+        if (dia in 1..D && franjaHoraria in 0 until (S - E)) {
+            println(horari[dia - 1][franjaHoraria])
+        } else {
+            println("NO HI HA CLASSE") //en cas contrari imprimim aquest missatge per pantalla
+        }
+    }
+}
+
+
+
+EXERCICI 1
+
+fun main() {
+    val casProva = readLine()!!.toInt() //llegim cada cas de prova
+    repeat(casProva) { //iterem sobre cada da
+        val aperitius = readLine()!!.split(" ")
+        val cadaQuants = readLine()!!.toInt()
+        val resultat = aperitius.filterIndexed { index, _ -> (index + 1) % cadaQuants != 0 }
+        println(resultat.joinToString(" "))
+    }
+}
+
+
+
